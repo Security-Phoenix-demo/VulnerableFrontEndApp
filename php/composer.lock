@@ -1,0 +1,72 @@
+{
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "demo",
+  "packages": [
+    {
+      "name": "guzzlehttp/guzzle",
+      "version": "6.3.0",
+      "type": "library",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/guzzlehttp/guzzle.git"
+      }
+    },
+    {
+      "name": "symfony/http-foundation",
+      "version": "v4.4.0",
+      "type": "library",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/http-foundation.git"
+      }
+    },
+    {
+      "name": "monolog/monolog",
+      "version": "1.24.0",
+      "type": "library",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/monolog/monolog.git"
+      }
+    },
+    {
+      "name": "twig/twig",
+      "version": "v2.11.0",
+      "type": "library",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/twig/twig.git"
+      }
+    },
+    {
+      "name": "guzzlehttp/psr7",
+      "version": "1.4.2",
+      "type": "library",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/guzzlehttp/psr7.git"
+      }
+    },
+    {
+      "name": "guzzlehttp/promises",
+      "version": "v1.3.1",
+      "type": "library",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/guzzlehttp/promises.git"
+      }
+    }
+  ],
+  "packages-dev": [],
+  "aliases": [],
+  "minimum-stability": "stable",
+  "stability-flags": [],
+  "prefer-stable": true,
+  "prefer-lowest": false,
+  "platform": [],
+  "platform-dev": [],
+  "plugin-api-version": "2.3.0"
+}
