@@ -1,0 +1,3 @@
+INSERT INTO users (username, password_hash, role, created_at) VALUES ('admin', '$2a$10$7EqJtq98hPqEX7fNZaFWoOhi5XSzh3GJ7Lh3QZ3i6V1Qm7a9k3Qxu', 'ADMIN', CURRENT_TIMESTAMP);
+INSERT INTO finding (package_name, installed_version, fixed_version, cve, cvss_score, description) VALUES ('org.apache.logging.log4j:log4j-core', '2.14.1', '2.17.1', 'CVE-2021-44228', 10.0, 'JNDI lookup in log messages');
+INSERT INTO finding (package_name, installed_version, fixed_version, cve, cvss_score, description) VALUES ('org.apache.commons:commons-text', '1.9', '1.10.0', 'CVE-2022-42889', 9.8, 'StringSubstitutor script interpolation');

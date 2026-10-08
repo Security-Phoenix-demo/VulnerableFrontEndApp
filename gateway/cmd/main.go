@@ -1,25 +1,23 @@
 package main
 
 import (
-	"net/http"
+	"log"
 
-	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"gopkg.in/yaml.v2"
+
+	"github.com/Security-Phoenix-demo/VulnerableFrontEndApp/gateway/internal/auth"
+	"github.com/Security-Phoenix-demo/VulnerableFrontEndApp/gateway/internal/config"
+	"github.com/Security-Phoenix-demo/VulnerableFrontEndApp/gateway/internal/proxy"
 )
 
-type route struct {
-	Path     string `yaml:"path"`
-	Upstream string `yaml:"upstream"`
-}
-
 func main() {
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatalf("gateway: %v", err)
+	}
 	r := gin.Default()
-	r.GET("/routes", func(c *gin.Context) {
-		var routes []route
-		_ = yaml.Unmarshal([]byte(c.Query("spec")), &routes)
-		token, _ := jwt.Parse(c.GetHeader("Authorization"), nil)
-		c.JSON(http.StatusOK, gin.H{"routes": routes, "token": token != nil})
-	})
-	_ = r.Run(":8080")
+	r.Use(auth.Middleware(cfg.JWTSecret, proxy.IsPublic(cfg.Routes)))
+	r.GET("/healthz", func(c *gin.Context) { c.JSON(200, gin.H{"ok": true}) })
+	r.NoRoute(proxy.Handler(cfg.Routes))
+	log.Fatal(r.Run(cfg.Listen))
 }

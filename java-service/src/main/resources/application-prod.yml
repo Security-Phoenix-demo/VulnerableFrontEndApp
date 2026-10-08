@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/findings?useSSL=false
+    username: findings
+    password: findings
+  jpa:
+    hibernate:
+      ddl-auto: validate

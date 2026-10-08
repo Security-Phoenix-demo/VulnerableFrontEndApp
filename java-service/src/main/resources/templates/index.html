@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Findings — java-service</title>
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+  <h1>Findings by package</h1>
+  <table>
+    <thead><tr><th>Package</th><th>Findings</th><th>Max CVSS</th></tr></thead>
+    <tbody>
+      <tr th:each="row : ${summary}">
+        <td th:text="${row.packageName}">pkg</td>
+        <td th:text="${row.count}">0</td>
+        <td th:text="${row.maxScore}">0.0</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
