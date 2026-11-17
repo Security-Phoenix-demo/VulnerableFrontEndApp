@@ -1,18 +1,25 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    loofah (2.2.2)
-    nokogiri (1.10.0)
-    rack (2.0.6)
+    crass (1.0.8)
+    loofah (2.25.2)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.12.0)
+    mini_portile2 (2.8.9)
+    nokogiri (1.19.5)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    racc (1.8.1)
+    rack (2.2.25)
     rails (5.2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  loofah (= 2.2.2)
-  nokogiri (= 1.10.0)
-  rack (= 2.0.6)
+  loofah (= 2.25.2)
+  nokogiri (= 1.19.5)
+  rack (= 2.2.25)
   rails (= 5.2.0)
 
 BUNDLED WITH
